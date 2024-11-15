@@ -1,6 +1,6 @@
 ---
 title: Markdown Style test
-date: 2018-7-24 23:31:06
+date: 2022-08-14T21:34:36+08:00
 tags:
 featured: false
 series: ["Markdown"]
