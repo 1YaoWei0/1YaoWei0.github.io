@@ -1,11 +1,11 @@
-baseURL: 'https://hugo-ladder.pages.dev'
+baseURL: 'https://1YaoWei0.github.io'
 title: LADDER
 theme: hugo-theme-ladder
 license: MIT
 licenselink: 'https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE'
 description: 'A fast, clean Hugo theme'
-homepage: 'https://hugo-ladder.pages.dev'
-defaultContentLanguage: 'en'
+homepage: 'https://1YaoWei0.github.io'
+defaultContentLanguage: 'zh'
 googleAnalytics: G-4WXJ5TEK2S
 paginate: 10
 hasCJKLanguage: true
@@ -36,9 +36,9 @@ menu:
 params:
   brand: HOME
   avatarURL: /images/avatar.png
-  author: Hugo Ladder
-  authorDescription: A clean, fast hugo theme focused on Reading
-  info: Ladder is a clean, simple but beautiful theme with awesome features
+  author: Willie Yao
+  authorDescription: A developer
+  info: Record any funny article
   favicon: /images/avatar.png
   options:
     showDarkMode: true
