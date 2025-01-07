@@ -20,29 +20,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"1yaowei0.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"},"duration":200},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="When we cannot find or edit the extension properties, we can use the cache for building the communication between front-end and back-end.">
+    <meta name="description" content="The example code for merging the ledger account">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cache">
-<meta property="og:url" content="https://1yaowei0.github.io/2024/12/22/commerce-cache/index.html">
+<meta property="og:title" content="Merge the Ledger Account">
+<meta property="og:url" content="https://1yaowei0.github.io/2024/12/23/xpp-merge-ledger-account/index.html">
 <meta property="og:site_name" content="DYNAMICS F&amp;O BLOGS">
-<meta property="og:description" content="When we cannot find or edit the extension properties, we can use the cache for building the communication between front-end and back-end.">
+<meta property="og:description" content="The example code for merging the ledger account">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://1yaowei0.github.io/2024/12/22/commerce-cache/commerce-cache-example.png">
-<meta property="article:published_time" content="2024-12-22T04:42:02.000Z">
-<meta property="article:modified_time" content="2024-12-23T13:22:44.426Z">
+<meta property="article:published_time" content="2024-12-23T07:56:06.000Z">
+<meta property="article:modified_time" content="2025-01-05T07:15:08.366Z">
 <meta property="article:author" content="Willie Yao">
-<meta property="article:tag" content="ScaleUnit">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://1yaowei0.github.io/2024/12/22/commerce-cache/commerce-cache-example.png">
 
 
-<link rel="canonical" href="https://1yaowei0.github.io/2024/12/22/commerce-cache/">
+<link rel="canonical" href="https://1yaowei0.github.io/2024/12/23/xpp-merge-ledger-account/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://1yaowei0.github.io/2024/12/22/commerce-cache/","path":"2024/12/22/commerce-cache/","title":"Cache"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://1yaowei0.github.io/2024/12/23/xpp-merge-ledger-account/","path":"2024/12/23/xpp-merge-ledger-account/","title":"Merge the Ledger Account"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Cache | DYNAMICS F&O BLOGS</title>
+<title>Merge the Ledger Account | DYNAMICS F&O BLOGS</title>
   
 
 
@@ -101,7 +98,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -114,7 +111,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cache-cs-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">Cache.cs 代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">使用示例</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -165,7 +161,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://1yaowei0.github.io/2024/12/22/commerce-cache/">
+    <link itemprop="mainEntityOfPage" href="https://1yaowei0.github.io/2024/12/23/xpp-merge-ledger-account/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -178,12 +174,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Cache | DYNAMICS F&O BLOGS">
-      <meta itemprop="description" content="When we cannot find or edit the extension properties, we can use the cache for building the communication between front-end and back-end.">
+      <meta itemprop="name" content="Merge the Ledger Account | DYNAMICS F&O BLOGS">
+      <meta itemprop="description" content="The example code for merging the ledger account">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Cache
+          Merge the Ledger Account
         </h1>
 
         <div class="post-meta-container">
@@ -194,14 +190,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-12-22 12:42:02" itemprop="dateCreated datePublished" datetime="2024-12-22T12:42:02+08:00">2024-12-22</time>
+      <time title="Created: 2024-12-23 15:56:06" itemprop="dateCreated datePublished" datetime="2024-12-23T15:56:06+08:00">2024-12-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-23 21:22:44" itemprop="dateModified" datetime="2024-12-23T21:22:44+08:00">2024-12-23</time>
+      <time title="Modified: 2025-01-05 15:15:08" itemprop="dateModified" datetime="2025-01-05T15:15:08+08:00">2025-01-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -209,7 +205,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Retail-Commerce/" itemprop="url" rel="index"><span itemprop="name">Retail Commerce</span></a>
+          <a href="/categories/X/" itemprop="url" rel="index"><span itemprop="name">X++</span></a>
         </span>
     </span>
 
@@ -223,19 +219,15 @@
     </span>
 </div>
 
-            <div class="post-description">When we cannot find or edit the extension properties, we can use the cache for building the communication between front-end and back-end.</div>
+            <div class="post-description">The example code for merging the ledger account</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>POS 前后端通信通常需要使用 <code>extension properties</code>；<code>extension properties</code> 存在于 <strong>Cart</strong>、<strong>CartLine</strong>、<strong>SalesTransaction</strong> 和 <strong>SalesLine</strong> 等；但某些场景，无法编辑 <code>extension properties</code>，所以无法通信；可以按照以下 <strong>Cache</strong> 构建新的通信机制；（谨慎使用，影响性能）</p>
-<img src="/2024/12/22/commerce-cache/commerce-cache-example.png" class="" title="cache example">
-
-<h3 id="Cache-cs-代码示例"><a href="#Cache-cs-代码示例" class="headerlink" title="Cache.cs 代码示例"></a>Cache.cs 代码示例</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Microsoft.Extensions.Caching.Memory;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">LMS.Cache</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">LMSCache</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> Lazy&lt;MemoryCache&gt; lazy = <span class="keyword">new</span> Lazy&lt;MemoryCache&gt;(()</span><br><span class="line">            =&gt; <span class="keyword">new</span> MemoryCache(<span class="keyword">new</span> MemoryCacheOptions()));</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> MemoryCache cache</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> lazy.Value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> T <span class="title">Get</span>&lt;<span class="title">T</span>&gt;(<span class="params"><span class="built_in">string</span> key</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!cache.TryGetValue&lt;T&gt;(key, <span class="keyword">out</span> T cacheItem))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">default</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> cacheItem;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Put</span>&lt;<span class="title">T</span>&gt;(<span class="params"><span class="built_in">string</span> key, T <span class="keyword">value</span>, <span class="built_in">int</span> cacheLifeInSeconds = <span class="number">500</span></span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">value</span> == <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (cache.Get(key) != <span class="literal">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    cache.Remove(key);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                cache.Set&lt;T&gt;(key, <span class="keyword">value</span>, DateTimeOffset.Now.AddSeconds(cacheLifeInSeconds));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> LMSCache()).Get&lt;<span class="built_in">string</span>&gt;(key); <span class="comment">// Get the value by key</span></span><br><span class="line">(<span class="keyword">new</span> LMSCache()).Put&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;(key, <span class="keyword">value</span>); <span class="comment">// Put the key value mapping</span></span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><p>The example code as shown below:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LedgerDimensionAccount <span class="title">generateDefaultDimension</span>(<span class="params">container _conName, container _conValue</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    DimensionAttributeValueSetStorage   valueSetStorage = <span class="keyword">new</span> DimensionAttributeValueSetStorage();</span><br><span class="line">    <span class="built_in">int</span>                                 i;</span><br><span class="line">    DimensionAttribute                  dimensionAttribute;</span><br><span class="line">    DimensionAttributeValue             dimensionAttributeValue;</span><br><span class="line">    container                           conAttr  = _conName;</span><br><span class="line">    container                           conValue = _conValue;</span><br><span class="line">    str                                 dimValue;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= conLen(conAttr); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        dimensionAttribute = dimensionAttribute::findByName(conPeek(conAttr,i));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (dimensionAttribute.RecId == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        dimValue = conPeek(conValue,i);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (dimValue != <span class="string">&quot;&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// The last parameter is &quot;true&quot;. A dimensionAttributeValue record will be created if not found.</span></span><br><span class="line">            dimensionAttributeValue = dimensionAttributeValue::findByDimensionAttributeAndValue(dimensionAttribute, dimValue, <span class="literal">false</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Add the dimensionAttibuteValue to the default dimension</span></span><br><span class="line">            valueSetStorage.addItem(dimensionAttributeValue);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> valueSetStorage.save();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LedgerDimensionAccount <span class="title">replaceDefaultDimensionValues</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">    DimensionDefault    _invoiceDefaultDimension,</span></span></span><br><span class="line"><span class="params"><span class="function">    DimensionDefault    _purchDefaultDimension,</span></span></span><br><span class="line"><span class="params"><span class="function">    container           _conName</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    DimensionAttributeValueSetStorage invoiceValueSetStorage    = DimensionAttributeValueSetStorage::find(_invoiceDefaultDimension);</span><br><span class="line">    DimensionAttributeValueSetStorage purchValueSetStorage      = DimensionAttributeValueSetStorage::find(_purchDefaultDimension);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt;= conLen(_conName); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> dimensionAttribute      = DimensionAttribute::findByName(conPeek(_conName, i));</span><br><span class="line">        <span class="keyword">var</span> invoiceDimensionValue   = invoiceValueSetStorage.getDisplayValueByDimensionAttribute(dimensionAttribute.RecId);</span><br><span class="line">        <span class="keyword">var</span> purchDimensionValue     = purchValueSetStorage.getDisplayValueByDimensionAttribute(dimensionAttribute.RecId);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (purchDimensionValue &amp;&amp; (purchDimensionValue != invoiceDimensionValue))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> newDimensionAttributeValue = DimensionAttributeValue::findByDimensionAttributeAndValue(dimensionAttribute, purchDimensionValue, <span class="literal">false</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">            invoiceValueSetStorage.removeDimensionAttribute(dimensionAttribute.RecId);</span><br><span class="line">            invoiceValueSetStorage.addItem(newDimensionAttributeValue);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">return</span> invoiceValueSetStorage.save();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -243,21 +235,18 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/ScaleUnit/" rel="tag"># ScaleUnit</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/12/21/hello-world/" rel="prev" title="Site building tutorial">
-                  <i class="fa fa-angle-left"></i> Site building tutorial
+                <a href="/2024/12/23/xpp-api-list/" rel="prev" title="X++ api list">
+                  <i class="fa fa-angle-left"></i> X++ api list
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/12/23/commerce-use-languageId/" rel="next" title="How to print the amount based on the Language Id">
-                  How to print the amount based on the Language Id <i class="fa fa-angle-right"></i>
+                <a href="/2024/12/23/mssql-clear-log/" rel="next" title="The way for clearing the log disk">
+                  The way for clearing the log disk <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
