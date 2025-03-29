@@ -29,13 +29,13 @@
 <meta property="og:site_name" content="DYNAMICS F&amp;O BLOGS">
 <meta property="og:description" content="在开发VSIX扩展时，安全存储API Key是关键需求。本案例通过&#96;ProtectedData&#96;加密与SecureString结合，实现密钥的加密存储与安全调用。用户输入API Key时，采用WPF PasswordBox控件接收SecureString，避免明文暴露。加密后数据以Base64存储于OptionPane全局配置，解密时仅当前用户可还原。通过作用域控制与内存清理机制，最大限度减少敏感">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/75c34455b6d94fd5a859979b5462f90d.png">
-<meta property="og:image" content="https://i-blog.csdnimg.cn/direct/c3f95d2ff64b427591d18ce311bcefea.png">
+<meta property="og:image" content="https://1yaowei0.github.io/2025/03/29/%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF/75c34455b6d94fd5a859979b5462f90d.png">
+<meta property="og:image" content="https://1yaowei0.github.io/2025/03/29/%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF/c3f95d2ff64b427591d18ce311bcefea.png">
 <meta property="article:published_time" content="2025-03-29T07:19:37.000Z">
-<meta property="article:modified_time" content="2025-03-29T07:21:25.552Z">
+<meta property="article:modified_time" content="2025-03-29T08:18:34.757Z">
 <meta property="article:author" content="Willie Yao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i-blog.csdnimg.cn/direct/75c34455b6d94fd5a859979b5462f90d.png">
+<meta name="twitter:image" content="https://1yaowei0.github.io/2025/03/29/%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF/75c34455b6d94fd5a859979b5462f90d.png">
 
 
 <link rel="canonical" href="https://1yaowei0.github.io/2025/03/29/%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF/">
@@ -201,7 +201,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-03-29 15:19:37 / Modified: 15:21:25" itemprop="dateCreated datePublished" datetime="2025-03-29T15:19:37+08:00">2025-03-29</time>
+      <time title="Created: 2025-03-29 15:19:37 / Modified: 16:18:34" itemprop="dateCreated datePublished" datetime="2025-03-29T15:19:37+08:00">2025-03-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -230,8 +230,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>@[TOC](VSIX 加密存取数据的案例)</p>
-<blockquote>
+    <div class="post-body" itemprop="articleBody"><blockquote>
 <p>本篇为大家介绍一个加密存储数据到 OptionPane 的案例。</p>
 </blockquote>
 <h2 id="案例背景"><a href="#案例背景" class="headerlink" title="案例背景"></a>案例背景</h2><p>AI 应用开发需要调用大模型开放的接口，API Key 便是必不可少的（以下使用 deepseek-v3 示范）。</p>
@@ -252,9 +251,12 @@
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SecureString <span class="title">DecryptToSecureString</span>(<span class="params"><span class="built_in">string</span> encryptedBase64</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">byte</span>[] encryptedBytes = Covert.FromBase64String(encryptedBase64);</span><br><span class="line">	<span class="built_in">byte</span>[] decryptedBytes = ProtectedData.Unprotect(</span><br><span class="line">		encryptedBytes,</span><br><span class="line">		optionEntropy: <span class="literal">null</span>,</span><br><span class="line">		scope: DataProtectionScope.CurrentUser</span><br><span class="line">	);</span><br><span class="line">	<span class="keyword">return</span> ToSecureString(Encoding.UTF8.GetString(decryptedBytes));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其次不可直接将存储在全局的数据直接展示给用户，应当类似 Password 的风格，如下图：</p>
-<p><img src="https://i-blog.csdnimg.cn/direct/75c34455b6d94fd5a859979b5462f90d.png" alt="以 secure string 展示 key"></p>
-<p>VSIX 提供了 OptionPane 接口用于存储全局的数据，用户可导航至 Tools &gt;Option 找到 Visual Studio IDE 的所有全局配置标签页，如下图：</p>
-<p><img src="https://i-blog.csdnimg.cn/direct/c3f95d2ff64b427591d18ce311bcefea.png" alt="测试结果"><br><strong>注</strong></p>
+<img src="/2025/03/29/%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF/75c34455b6d94fd5a859979b5462f90d.png" class="" title="加密展示">
+
+<p>VSIX 提供了 OptionPane 接口用于存储全局的数据，用户可导航至 Tools &gt; Option 找到 Visual Studio IDE 的所有全局配置标签页，如下图：</p>
+<img src="/2025/03/29/%E5%8A%A0%E5%AF%86%E5%AD%98%E5%82%A8%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF/c3f95d2ff64b427591d18ce311bcefea.png" class="" title="全局配置页">
+
+<p><strong>注</strong></p>
 <blockquote>
 <p>最后需要注意明文不可在代码内存中保留太长时间，这意味着在用户输入 API key 时，不可以直接使用 WPF.textbox 以普通字符串的形式接收用户输入的值，可以使用 SecureString 接收用户的输入值。<br>在 C# 中，SecureString 是一种用于安全存储敏感数据（如密码、密钥等）的特殊字符串类型。其核心设计目标是通过加密和内存管理机制，降低敏感数据在内存中暴露的风险。<br>而在请求发出后&#x2F;时，应当立刻清理内存中的明敏感数据。这需要使用 byte[] 存储解密后的数据(在 C# 中普通字符串无法被安全地擦除)。最大的减少作用域，并且利用 Array.Clear() 清理 byte[] 数据。</p>
 </blockquote>
