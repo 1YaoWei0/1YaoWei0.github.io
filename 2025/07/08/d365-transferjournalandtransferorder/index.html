@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Dynamics365_scalable.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Dynamics365_scalable.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Dynamics365_scalable.svg">
+  <link rel="mask-icon" href="/images/Dynamics365_scalable.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"1yaowei0.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":1,"offset":1},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Difference Between Transfer Journal and Transfer Order D365 F&amp;O">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Difference Between Transfer Journal and Transfer Order D365 F&amp;O">
+<meta property="og:url" content="https://1yaowei0.github.io/2025/07/08/d365-transferjournalandtransferorder/index.html">
+<meta property="og:site_name" content="DYNAMICS 365 FINANCE AND OPERATIONS BLOGS">
+<meta property="og:description" content="Difference Between Transfer Journal and Transfer Order D365 F&amp;O">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-08T12:17:26.000Z">
+<meta property="article:modified_time" content="2025-12-26T03:11:02.904Z">
+<meta property="article:author" content="Willie Yao">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://1yaowei0.github.io/2025/07/08/d365-transferjournalandtransferorder/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://1yaowei0.github.io/2025/07/08/d365-transferjournalandtransferorder/","path":"2025/07/08/d365-transferjournalandtransferorder/","title":"Difference Between Transfer Journal and Transfer Order D365 F&O"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Difference Between Transfer Journal and Transfer Order D365 F&O | DYNAMICS 365 FINANCE AND OPERATIONS BLOGS</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">DYNAMICS 365 FINANCE AND OPERATIONS BLOGS</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">D365 F&O BLOGS</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">22</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">27</span></a></li><li class="menu-item menu-item-hmt"><a href="/HMT-page/" rel="section"><i class="fa fa-sitemap fa-fw"></i>HMT</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-of-Dynamics-365-Finance-and-Operations"><span class="nav-number">1.</span> <span class="nav-text">Overview of Dynamics 365 Finance and Operations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-a-Transfer-Journal"><span class="nav-number">2.</span> <span class="nav-text">What is a Transfer Journal?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scenarios-for-Transfer-Journals"><span class="nav-number">2.1.</span> <span class="nav-text">Scenarios for Transfer Journals:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-Create-and-Process-a-Transfer-Journal"><span class="nav-number">2.2.</span> <span class="nav-text">How to Create and Process a Transfer Journal?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-a-Transfer-Order"><span class="nav-number">3.</span> <span class="nav-text">What is a Transfer Order?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scenarios-for-Transfer-Orders"><span class="nav-number">3.1.</span> <span class="nav-text">Scenarios for Transfer Orders:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-Create-and-Process-a-Transfer-Order"><span class="nav-number">3.2.</span> <span class="nav-text">How to Create and Process a Transfer Order?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-Differences-Between-Transfer-Journals-and-Transfer-Orders"><span class="nav-number">4.</span> <span class="nav-text">Key Differences Between Transfer Journals and Transfer Orders</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity-and-Application"><span class="nav-number">4.1.</span> <span class="nav-text">Complexity and Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tracking-and-Documentation"><span class="nav-number">4.2.</span> <span class="nav-text">Tracking and Documentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inventory-Impact"><span class="nav-number">4.3.</span> <span class="nav-text">Inventory Impact</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Willie Yao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Willie Yao</p>
+  <div class="site-description" itemprop="description">Expert insights on finance, supply chain, automation, and upgrades for Microsoft Dynamics 365 Finance & Operations. Maximize efficiency today!</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1YaoWei0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1YaoWei0" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://1yaowei0.github.io/2025/07/08/d365-transferjournalandtransferorder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Willie Yao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DYNAMICS 365 FINANCE AND OPERATIONS BLOGS">
+      <meta itemprop="description" content="Expert insights on finance, supply chain, automation, and upgrades for Microsoft Dynamics 365 Finance & Operations. Maximize efficiency today!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Difference Between Transfer Journal and Transfer Order D365 F&O | DYNAMICS 365 FINANCE AND OPERATIONS BLOGS">
+      <meta itemprop="description" content="Difference Between Transfer Journal and Transfer Order D365 F&O">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Difference Between Transfer Journal and Transfer Order D365 F&O
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-07-08 20:17:26" itemprop="dateCreated datePublished" datetime="2025-07-08T20:17:26+08:00">2025-07-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-12-26 11:11:02" itemprop="dateModified" datetime="2025-12-26T11:11:02+08:00">2025-12-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/d365/" itemprop="url" rel="index"><span itemprop="name">d365</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">Difference Between Transfer Journal and Transfer Order D365 F&O</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>In Dynamics 365 Finance and Operations (D365 F&amp;O), knowing the difference between a transfer journal and a Transfer Order is crucial when handling inventories. Although they seem to be related, these two features serve separate purposes and meet different needs.</p>
+<p>This write-up explores the nuances of transfer journals and transfer orders, explaining their differences and uses inside D365 F&amp;O.</p>
+<h2 id="Overview-of-Dynamics-365-Finance-and-Operations"><a href="#Overview-of-Dynamics-365-Finance-and-Operations" class="headerlink" title="Overview of Dynamics 365 Finance and Operations"></a>Overview of Dynamics 365 Finance and Operations</h2><p>Designed to maximize business processes, Dynamics 365 Finance and Operations is a complete enterprise resource planning (ERP) tool. Among its many capabilities are supply chain management, inventory control, and financial management. Within the field of inventory control, the correct and effective movement of products is mostly dependent on Transfer Journals and Transfer Orders.</p>
+<p>Let’s learn about them, one by one.</p>
+<h2 id="What-is-a-Transfer-Journal"><a href="#What-is-a-Transfer-Journal" class="headerlink" title="What is a Transfer Journal?"></a>What is a Transfer Journal?</h2><p>One simple tool for internal inventory movement in D365 Finance and Operations is a transfer journal. It lets organizations move goods between several sites inside the same warehouse or between closely spaced warehouses without including thorough tracking or shipping documents.</p>
+<p>Transfer journals are perfect for regular inventory changes and internal relocations because of their simplicity.</p>
+<h3 id="Scenarios-for-Transfer-Journals"><a href="#Scenarios-for-Transfer-Journals" class="headerlink" title="Scenarios for Transfer Journals:"></a>Scenarios for Transfer Journals:</h3><ul>
+<li><strong>Internal Reorganization</strong>: Transfer Journals allow an organization to shift goods from one bin location to another inside the same warehouse when it needs to rearrange its warehouse layout. This simplifies the maintenance of an accurate record of inventory locations free from the complexity of shipping documentation.</li>
+<li><strong>Correcting Mistakes</strong>: A Transfer Journal allows one to rapidly rectify mistakes in items received with erroneous tracking numbers or at the wrong location. Businesses can keep exact traceability by moving goods between tracking dimensions, such as batch or serial numbers.</li>
+<li><strong>Close Proximity Transfers</strong>: Transfer Journals help to streamline the process while goods are being moved between two geographically close warehouses. This simplifies the transfer procedure by removing the necessity for thorough tracking and documentation for delivery.</li>
+</ul>
+<h3 id="How-to-Create-and-Process-a-Transfer-Journal"><a href="#How-to-Create-and-Process-a-Transfer-Journal" class="headerlink" title="How to Create and Process a Transfer Journal?"></a>How to Create and Process a Transfer Journal?</h3><p>Creating and processing a Transfer Journal in D365 Finance and Operations involves a few straightforward steps:</p>
+<ul>
+<li>Navigate to Inventory Management &gt; Journal entries &gt; Items &gt; Transfer.</li>
+<li>Create a new journal by clicking “New”. Add the required information including the journal name, description, site, and warehouse.</li>
+<li>Enter the item number, quantity, from site, to site, from warehouse, and to warehouse to add the items you wish to transfer.</li>
+<li>Validate the journal to look for mistakes. Post the journal once validated to complete the transfer. This will change the levels of inventory in the designated sites.</li>
+<li>Navigate to Inventory management &gt; Inquiries and reports &gt; Journals &gt; Item transactions to review the transfer specifics. To read the specifics, choose the journal you posted and click “Transactions”.<blockquote>
+<p>Get Dynamics 365 Finance and Operations implemented by a top Microsoft Gold partner in the USA—Dynamics Square. Schedule a free consultation now!</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="What-is-a-Transfer-Order"><a href="#What-is-a-Transfer-Order" class="headerlink" title="What is a Transfer Order?"></a>What is a Transfer Order?</h2><p>A transfer order in D365 Finance and Operations is designed as a completed tool for moving stocks between warehouses or sites where thorough tracking and shipping paperwork are needed.</p>
+<p>Transfer orders are appropriate for circumstances whereby objects must be tracked throughout travel since they offer more control and visibility over the transfer process.</p>
+<h3 id="Scenarios-for-Transfer-Orders"><a href="#Scenarios-for-Transfer-Orders" class="headerlink" title="Scenarios for Transfer Orders:"></a>Scenarios for Transfer Orders:</h3><ul>
+<li><strong>Long-Distance Transfers</strong>: Transfer Orders guarantee that goods are being traced all through the transportation process when goods are being moved between warehouses that are far apart. Maintaining inventory accuracy depends on tracking, shipping, and receiving documents, hence this covers all aspects.</li>
+<li><strong>Shipping Documentation</strong>: Transfer orders are utilized when shipment documentation is needed to go along with the items. This is crucial for giving customers comprehensive shipment data and following shipping laws.</li>
+<li><strong>Warehouse Management Processes</strong>: Transfer Orders fit very well in settings where warehouse staff members handle picking, packing, shipping, and receiving items. They guarantee that every stage of the transfer process is recorded and tracked.</li>
+</ul>
+<h3 id="How-to-Create-and-Process-a-Transfer-Order"><a href="#How-to-Create-and-Process-a-Transfer-Order" class="headerlink" title="How to Create and Process a Transfer Order?"></a>How to Create and Process a Transfer Order?</h3><p>Creating and processing a Transfer Order in D365 Finance and Operations involves several detailed steps:</p>
+<ul>
+<li>Visit Inventory Management &gt; Outbound orders &gt; Transfer Order to navigate.</li>
+<li>Click “New” to draft a fresh transfer order. Now go into the “from” and “to” warehouses.</li>
+<li>Enter the item number and quantity to add the items you wish to move.</li>
+<li>Go to Inventory management &gt; Periodic &gt; Release transfer order picking. Click “OK,” then enter the transfer order number. Should the “Deduct released for picking” checkbox be chosen, the system will automatically deduct the pertinent quantity from the on-hand inventory.</li>
+<li>Go return to your transfer order and click “Ship” in the Action Pane. Check the quantity and product; then, click “OK” to post the shipment.</li>
+<li>Go to Inventory management &gt; Inbound orders &gt; Transfer order. Choose the transfer order then click “Receive” on the Action Pane. Check the quantity and product; then, to finish the receipt, click “OK.”</li>
+</ul>
+<h2 id="Key-Differences-Between-Transfer-Journals-and-Transfer-Orders"><a href="#Key-Differences-Between-Transfer-Journals-and-Transfer-Orders" class="headerlink" title="Key Differences Between Transfer Journals and Transfer Orders"></a>Key Differences Between Transfer Journals and Transfer Orders</h2><h3 id="Complexity-and-Application"><a href="#Complexity-and-Application" class="headerlink" title="Complexity and Application"></a>Complexity and Application</h3><ul>
+<li>Transfer Journals: Simple and flexible, transfer journals fit for internal relocation, error correction, and close proximity transfers.</li>
+<li>Transfer Orders: These are more complicated, suited for long-distance transfers, needing shipping documents, and interacting with warehouse management systems.</li>
+</ul>
+<h3 id="Tracking-and-Documentation"><a href="#Tracking-and-Documentation" class="headerlink" title="Tracking and Documentation"></a>Tracking and Documentation</h3><ul>
+<li>Transfer Journals: Minimal tracking and no need for shipping documentation. Ideal for internal transfers where detailed tracking is unnecessary.</li>
+<li>Transfer Orders: Detailed tracking with shipping and receiving documentation. Ensures visibility and control over the transfer process.</li>
+</ul>
+<h3 id="Inventory-Impact"><a href="#Inventory-Impact" class="headerlink" title="Inventory Impact"></a>Inventory Impact</h3><p>Transfer Journals: Inventory movements are recorded without offsetting costs. Suitable for internal adjustments and corrections.<br>Transfer Orders: Inventory and its value are tracked throughout the transfer process, with potential impacts on costing methods like moving or weighted average.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/07/08/xpp-onhandinvent/" rel="prev" title="Query On-Hand inventory using specific inventory-dimensions">
+                  <i class="fa fa-angle-left"></i> Query On-Hand inventory using specific inventory-dimensions
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/07/08/xpp-getselectedrecords/" rel="next" title="Get selected records in a grid on a form - X++">
+                  Get selected records in a grid on a form - X++ <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="1YaoWei0/utterances-comments" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Willie Yao</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/1YaoWei0" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.0/pdfobject.min.js","integrity":"sha256-JJZNsid68vnh3/zyj0lY9BN5ynxVX/12XgOa1TlaYN0="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script class="next-config" data-name="wavedrom" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js","integrity":"sha256-INLAoJc6quTNfiMWkGZniYO2cxE8mHpddnLow1m6RFs="}}</script>
+  <script class="next-config" data-name="wavedrom_skin" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js","integrity":"sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI="}}</script>
+  <script src="/js/third-party/tags/wavedrom.js"></script>
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

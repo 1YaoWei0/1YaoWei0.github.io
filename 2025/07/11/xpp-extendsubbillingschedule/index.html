@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Dynamics365_scalable.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Dynamics365_scalable.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Dynamics365_scalable.svg">
+  <link rel="mask-icon" href="/images/Dynamics365_scalable.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"1yaowei0.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":1,"offset":1},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="How to bring the sub billing schedule customized field value to sales order">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to bring the sub billing schedule customized field value to sales order">
+<meta property="og:url" content="https://1yaowei0.github.io/2025/07/11/xpp-extendsubbillingschedule/index.html">
+<meta property="og:site_name" content="DYNAMICS 365 FINANCE AND OPERATIONS BLOGS">
+<meta property="og:description" content="How to bring the sub billing schedule customized field value to sales order">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-11T11:54:42.000Z">
+<meta property="article:modified_time" content="2025-12-26T03:11:02.934Z">
+<meta property="article:author" content="Willie Yao">
+<meta property="article:tag" content="Extend">
+<meta property="article:tag" content="SalesTable">
+<meta property="article:tag" content="SubBillingSchedule">
+<meta property="article:tag" content="SubBillingScheduleLine">
+<meta property="article:tag" content="SalesLine">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://1yaowei0.github.io/2025/07/11/xpp-extendsubbillingschedule/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://1yaowei0.github.io/2025/07/11/xpp-extendsubbillingschedule/","path":"2025/07/11/xpp-extendsubbillingschedule/","title":"How to bring the sub billing schedule customized field value to sales order"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>How to bring the sub billing schedule customized field value to sales order | DYNAMICS 365 FINANCE AND OPERATIONS BLOGS</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">DYNAMICS 365 FINANCE AND OPERATIONS BLOGS</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">D365 F&O BLOGS</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">22</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">27</span></a></li><li class="menu-item menu-item-hmt"><a href="/HMT-page/" rel="section"><i class="fa fa-sitemap fa-fw"></i>HMT</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Willie Yao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Willie Yao</p>
+  <div class="site-description" itemprop="description">Expert insights on finance, supply chain, automation, and upgrades for Microsoft Dynamics 365 Finance & Operations. Maximize efficiency today!</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1YaoWei0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1YaoWei0" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://1yaowei0.github.io/2025/07/11/xpp-extendsubbillingschedule/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Willie Yao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DYNAMICS 365 FINANCE AND OPERATIONS BLOGS">
+      <meta itemprop="description" content="Expert insights on finance, supply chain, automation, and upgrades for Microsoft Dynamics 365 Finance & Operations. Maximize efficiency today!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="How to bring the sub billing schedule customized field value to sales order | DYNAMICS 365 FINANCE AND OPERATIONS BLOGS">
+      <meta itemprop="description" content="How to bring the sub billing schedule customized field value to sales order">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How to bring the sub billing schedule customized field value to sales order
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-07-11 19:54:42" itemprop="dateCreated datePublished" datetime="2025-07-11T19:54:42+08:00">2025-07-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-12-26 11:11:02" itemprop="dateModified" datetime="2025-12-26T11:11:02+08:00">2025-12-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/x/" itemprop="url" rel="index"><span itemprop="name">x++</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">How to bring the sub billing schedule customized field value to sales order</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Developer can extend <code>SubBillCreateSalesOrder</code> class to extend the customized fields value populated logic. Please see the example code:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> Willie Yao - 07/04/2025</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> The extension class for SubBillCreateSalesOrder</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">[<span class="meta">ExtensionOf(classStr(SubBillCreateSalesOrder))</span>]</span><br><span class="line">final <span class="keyword">class</span> <span class="title">HMClass_SubBillCreateSalesOrder_Extension</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> Willie Yao - 07/04/2025</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> Coc the <span class="doctag">&lt;c&gt;</span>createSalesLine<span class="doctag">&lt;/c&gt;</span> method for initialing the sales line&#x27;s customized fields.</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_salesLine&quot;&gt;</span>SalesLine<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_salesLineConsolidated&quot;&gt;</span>SubBillSalesLineConsolidated<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_salesIdCon&quot;&gt;</span>_salesIdCon<span class="doctag">&lt;SalesId/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_allocEnabled&quot;&gt;</span>AllocEnabled<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_splitByItemGroup&quot;&gt;</span>SplitByItemGroup<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_isInvoiceCreator&quot;&gt;</span>IsInvoiceCreator<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_includeBillingDatesToItem&quot;&gt;</span>IncludeBillingDatesToItem<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>SalesLine<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SalesLine <span class="title">createSalesLine</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">        SalesLine _salesLine,</span></span></span><br><span class="line"><span class="params"><span class="function">        SubBillSalesLineConsolidated _salesLineConsolidated,</span></span></span><br><span class="line"><span class="params"><span class="function">        SalesId _salesIdCon,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _allocEnabled,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _splitByItemGroup,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _isInvoiceCreator,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _includeBillingDatesToItem</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        SubBillScheduleLine     scheduleLine    = SubBillScheduleLine::find(_salesLineConsolidated.SubBillBillingScheduleNumber, _salesLineConsolidated.LineNum);</span><br><span class="line">        SubBillScheduleTable    scheduleTable   = SubBillScheduleTable::find(_salesLineConsolidated.SubBillBillingScheduleNumber);</span><br><span class="line">        SalesLine               salesLine       = <span class="function">next <span class="title">createSalesLine</span>(<span class="params">_salesLine, _salesLineConsolidated, _salesIdCon, _allocEnabled, _splitByItemGroup, _isInvoiceCreator, _includeBillingDatesToItem</span>)</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (scheduleLine)</span><br><span class="line">        &#123;</span><br><span class="line">            salesLine.HMField1 = scheduleLine.HMField1;</span><br><span class="line">            salesLine.HMField2 = scheduleLine.HMField2;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> salesLine;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> Willie Yao - 07/04/2025</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> Coc the initSalesTable method</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_salesTable&quot;&gt;</span>SalesTable<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_isInvoiceCreator&quot;&gt;</span>IsInvoiceCreator<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_numberSeq&quot;&gt;</span>NumberSeq<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_salesLineConsolidated&quot;&gt;</span>SalesLineConsolidated<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_curParmId&quot;&gt;</span>CurParmId<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>SalesTable<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SalesTable <span class="title">initSalesTable</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">        SalesTable _salesTable,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _isInvoiceCreator,</span></span></span><br><span class="line"><span class="params"><span class="function">        NumberSeq _numberSeq,</span></span></span><br><span class="line"><span class="params"><span class="function">        SubBillSalesLineConsolidated _salesLineConsolidated,</span></span></span><br><span class="line"><span class="params"><span class="function">        ParmId _curParmId</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        SubBillScheduleTable    scheduleTable   = SubBillScheduleTable::find(_salesLineConsolidated.SubBillBillingScheduleNumber);</span><br><span class="line">        SalesTable              salesTable      = <span class="function">next <span class="title">initSalesTable</span>(<span class="params">_salesTable, _isInvoiceCreator, _numberSeq, _salesLineConsolidated, _curParmId</span>)</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (scheduleTable)</span><br><span class="line">        &#123;</span><br><span class="line">            salesTable.HMField1 = scheduleTable.HMField1;</span><br><span class="line">            salesTable.HMField2 = scheduleTable.HMField2;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> salesTable;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> Willie Yao - 07/04/2025</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> Coc the createSalesOrder method</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_createSalesHeader&quot;&gt;</span>CreateSalesHeader<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_salesId&quot;&gt;</span>SalesId<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;salesLineConsolidated&quot;&gt;</span>SubBillSalesLineConsolidated<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_consolidateByCustomer&quot;&gt;</span>ConsolidateByCustomer<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_splitByItemGroup&quot;&gt;</span>SplitByItemGroup<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_returnValues&quot;&gt;</span>ReturnValues<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_includeBillingDatesToItem&quot;&gt;</span>IncludeBillingDatesToItem<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_isInvoiceCreator&quot;&gt;</span>IsInvoiceCreator<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_creditAdjMethod&quot;&gt;</span>CreditAdjMethod<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_terminationDate&quot;&gt;</span>TerminationDate<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_prorateDaily&quot;&gt;</span>ProrateDaily<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_curParmId&quot;&gt;</span>CurParmId<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_consolidateAllPeriods&quot;&gt;</span>ConsolidateAllPeriods<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>container<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> container <span class="title">createSalesOrder</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _createSalesHeader,</span></span></span><br><span class="line"><span class="params"><span class="function">        SalesId _salesId,</span></span></span><br><span class="line"><span class="params"><span class="function">        SubBillSalesLineConsolidated salesLineConsolidated,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _consolidateByCustomer,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _splitByItemGroup,</span></span></span><br><span class="line"><span class="params"><span class="function">        container _returnValues,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _includeBillingDatesToItem,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _isInvoiceCreator,</span></span></span><br><span class="line"><span class="params"><span class="function">        SubBillCreditDeferralAdjMethod _creditAdjMethod,</span></span></span><br><span class="line"><span class="params"><span class="function">        SubBillTerminationDate _terminationDate,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _prorateDaily,</span></span></span><br><span class="line"><span class="params"><span class="function">        ParmId _curParmId,</span></span></span><br><span class="line"><span class="params"><span class="function">        boolean _consolidateAllPeriods</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        SubBillScheduleTable scheduleTable = SubBillScheduleTable::find(salesLineConsolidated.SubBillBillingScheduleNumber);</span><br><span class="line">        <span class="keyword">if</span>(!_createSalesHeader)</span><br><span class="line">        &#123;            </span><br><span class="line">            SalesTable salesTableForUpt;</span><br><span class="line">            ttsbegin;</span><br><span class="line">            update_recordset salesTableForUpt</span><br><span class="line">                setting HMField1 = scheduleTable.HMField1,</span><br><span class="line">                        HMField2 = scheduleTable.HMField2</span><br><span class="line">                <span class="keyword">where</span> salesTableForUpt.SalesId == _salesId;</span><br><span class="line">            ttscommit;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        container newReturnContainer = <span class="function">next <span class="title">createSalesOrder</span>(<span class="params">_createSalesHeader, _salesId, salesLineConsolidated, _consolidateByCustomer, _splitByItemGroup, _returnValues, _includeBillingDatesToItem, _isInvoiceCreator,_creditAdjMethod, _terminationDate, _prorateDaily, _curParmId, _consolidateAllPeriods</span>)</span>;        </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> newReturnContainer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Extend/" rel="tag"><i class="fa fa-tag"></i> Extend</a>
+              <a href="/tags/SalesTable/" rel="tag"><i class="fa fa-tag"></i> SalesTable</a>
+              <a href="/tags/SubBillingSchedule/" rel="tag"><i class="fa fa-tag"></i> SubBillingSchedule</a>
+              <a href="/tags/SubBillingScheduleLine/" rel="tag"><i class="fa fa-tag"></i> SubBillingScheduleLine</a>
+              <a href="/tags/SalesLine/" rel="tag"><i class="fa fa-tag"></i> SalesLine</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/07/11/xpp-reversaltrans/" rel="prev" title="Reverse customer transaction in X++">
+                  <i class="fa fa-angle-left"></i> Reverse customer transaction in X++
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/07/11/xpp-copyadditemsfeature/" rel="next" title="How to Copy the Add Items">
+                  How to Copy the Add Items <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments">
+  <script src="https://utteranc.es/client.js" repo="1YaoWei0/utterances-comments" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Willie Yao</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/1YaoWei0" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.0/pdfobject.min.js","integrity":"sha256-JJZNsid68vnh3/zyj0lY9BN5ynxVX/12XgOa1TlaYN0="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script class="next-config" data-name="wavedrom" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js","integrity":"sha256-INLAoJc6quTNfiMWkGZniYO2cxE8mHpddnLow1m6RFs="}}</script>
+  <script class="next-config" data-name="wavedrom_skin" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js","integrity":"sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI="}}</script>
+  <script src="/js/third-party/tags/wavedrom.js"></script>
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
